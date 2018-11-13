@@ -24,13 +24,20 @@
     global navigation
 ==========================================*/
 .global-nav {
-  position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  list-style: none;
+  position: fixed;
+  top: 0;
+  padding: 1.5rem 1.5rem 0.5rem 0;
+  //right: 1.5rem;
   display: flex;
   justify-content: flex-end;
+  width: 100%;
+  list-style: none;
+  z-index: 1000;
 
+  &.scroll {
+    //background-color: rgba(1, 0, 0, 0.6);
+    background-color: #000;
+  }
   li {
     margin-right: 1rem;
 
@@ -44,7 +51,7 @@
       border-bottom: 2px solid #fff;
       font-size: 1.2rem;
       text-decoration: none;
-      color: #000;
+      color: #fff;
 
       &:hover, &.current {
         color: #85b970;
@@ -64,6 +71,15 @@
       main
   ------------------------------------------*/
   .main {
+    padding-bottom: 20px;
+    overflow: hidden;
+
+    //&::after {
+    //  content: ' ';
+    //  display: block;
+    //  height: 0;
+    //  clear: both;
+    //}
     &#home {
       background: #fff1d0;
       padding-right: 1rem;
@@ -86,7 +102,6 @@
     border-radius: 0 16px 16px 0;
     z-index: 200;
     display: none;
-    overflow: hidden;
     .sub-nav {
       background-color: #dadada;
     }
@@ -121,14 +136,22 @@
       suv-navigation
   ------------------------------------------*/
   .sub-nav {
-    position: fixed;
+    position: absolute;
     width: 250px;
+    padding-top: 50px;
     background: #5fdb78;
+    border-left: 30px solid #3d8d4e;
+
+    h2 {
+      text-align: center;
+      background-color: #ababab;
+    }
     ul {
       list-style: none;
-      padding-left: 3rem;
+      padding-left: 2rem;
 
       li {
+        padding: 15px 15px 15px 0;
       }
       a {
         margin-bottom: 5px;
@@ -145,6 +168,11 @@
         }
       }
     }
+
+    &.scroll {
+      position: fixed;
+      top: 61px;
+    }
   }
 
   /*----------------------------------------
@@ -152,10 +180,17 @@
   ------------------------------------------*/
   .main-contents {
     margin: 0 auto 0 260px;
-    .section {
-      height: 500px;
-      padding: 1rem;
-      background: #ffafb9;
-    }
+    overflow: hidden;
+    //&::after {
+    //  content: ' ';
+    //  display: block;
+    //  height: 0;
+    //  clear: both;
+  }
+  .section {
+    height: 500px;
+    min-width: 300px;
+    padding: 1rem;
+    background: #ffafb9;
   }
 }
