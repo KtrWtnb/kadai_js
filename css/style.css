@@ -19,12 +19,16 @@
     global navigation
 ==========================================*/
 .global-nav {
-  position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  list-style: none;
+  position: fixed;
+  top: 0;
+  padding: 1.5rem 1.5rem 0.5rem 0;
   display: flex;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+  width: 100%;
+  list-style: none;
+  z-index: 1000; }
+  .global-nav.scroll {
+    background-color: #000; }
   .global-nav li {
     margin-right: 1rem; }
     .global-nav li:last-child {
@@ -35,7 +39,7 @@
       border-bottom: 2px solid #fff;
       font-size: 1.2rem;
       text-decoration: none;
-      color: #000; }
+      color: #fff; }
       .global-nav li a:hover, .global-nav li a.current {
         color: #85b970;
         border-color: #85b970; }
@@ -60,9 +64,12 @@
   /*----------------------------------------
       main-contents
   ------------------------------------------*/ }
-  .main-container .main#home {
-    background: #fff1d0;
-    padding-right: 1rem; }
+  .main-container .main {
+    padding-bottom: 20px;
+    overflow: hidden; }
+    .main-container .main#home {
+      background: #fff1d0;
+      padding-right: 1rem; }
   .main-container .other {
     position: absolute;
     top: 0;
@@ -75,8 +82,7 @@
     border-left: none;
     border-radius: 0 16px 16px 0;
     z-index: 200;
-    display: none;
-    overflow: hidden; }
+    display: none; }
     .main-container .other .sub-nav {
       background-color: #dadada; }
     .main-container .other .section {
@@ -94,12 +100,19 @@
     .main-container .bg:hover {
       cursor: pointer; }
   .main-container .sub-nav {
-    position: fixed;
+    position: absolute;
     width: 250px;
-    background: #5fdb78; }
+    padding-top: 50px;
+    background: #5fdb78;
+    border-left: 30px solid #3d8d4e; }
+    .main-container .sub-nav h2 {
+      text-align: center;
+      background-color: #ababab; }
     .main-container .sub-nav ul {
       list-style: none;
-      padding-left: 3rem; }
+      padding-left: 2rem; }
+      .main-container .sub-nav ul li {
+        padding: 15px 15px 15px 0; }
       .main-container .sub-nav ul a {
         margin-bottom: 5px;
         display: block;
@@ -110,11 +123,16 @@
         .main-container .sub-nav ul a:hover, .main-container .sub-nav ul a.current {
           color: #b93619;
           border-color: #b93619; }
+    .main-container .sub-nav.scroll {
+      position: fixed;
+      top: 61px; }
   .main-container .main-contents {
-    margin: 0 auto 0 260px; }
-    .main-container .main-contents .section {
-      height: 500px;
-      padding: 1rem;
-      background: #ffafb9; }
+    margin: 0 auto 0 260px;
+    overflow: hidden; }
+  .main-container .section {
+    height: 500px;
+    min-width: 300px;
+    padding: 1rem;
+    background: #ffafb9; }
 
 /*# sourceMappingURL=style.css.map */
