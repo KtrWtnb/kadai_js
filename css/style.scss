@@ -61,6 +61,63 @@
   position: relative;
 
   /*----------------------------------------
+      main
+  ------------------------------------------*/
+  .main {
+    &#home {
+      background: #fff1d0;
+      padding-right: 1rem;
+    }
+  }
+
+  /*----------------------------------------
+      other
+  ------------------------------------------*/
+  .other {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-right: 1rem;
+    height: 100%;
+    width: 95%;
+    background: #fff;
+    border: 5px solid #a0a0a0;
+    border-left: none;
+    border-radius: 0 16px 16px 0;
+    z-index: 200;
+    display: none;
+    overflow: hidden;
+    .sub-nav {
+      background-color: #dadada;
+    }
+    .section {
+      background-color: #e3d1ff;
+    }
+
+    &:nth-of-type(odd) {
+      .section, .sub-nav {
+        background-color: #ff8670;
+      }
+    }
+  }
+
+  /*----------------------------------------
+      modal-background
+  ------------------------------------------*/
+  .bg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .4);
+    display: none;
+    z-index: 100;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  /*----------------------------------------
       suv-navigation
   ------------------------------------------*/
   .sub-nav {
@@ -100,55 +157,5 @@
       padding: 1rem;
       background: #ffafb9;
     }
-    .main-home {
-      //z-index: 0;
-    }
   }
-
-  #bg {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, .4);
-    z-index: 100;
-  }
-
-  /*----------------------------------------
-      home
-  ------------------------------------------*/
-  #home {
-    background: #fff1d0;
-    padding-right: 1rem;
-  }
-
-  /*----------------------------------------
-      person
-  ------------------------------------------*/
-  #person {
-    position: absolute;
-    top: 0;
-    //bottom: 0;
-    //left: 0;
-    //right: 0;
-    //margin: auto;
-    padding-right: 1rem;
-    height: 100%;
-    width: 95%;
-    background: #fff;
-    z-index: 200;
-    display: none;
-    .sub-nav {
-      background-color: #dadada;
-    }
-    .section {
-      background-color: #e3d1ff;
-    }
-    .current {
-    }
-  }
-
-  //.current {
-  //  display: block;
-  //}
 }
