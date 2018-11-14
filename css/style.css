@@ -65,8 +65,7 @@
       main-contents
   ------------------------------------------*/ }
   .main-container .main {
-    padding-bottom: 20px;
-    overflow: hidden; }
+    padding-bottom: 20px; }
     .main-container .main#home {
       background: #fff1d0;
       padding-right: 1rem; }
@@ -83,12 +82,12 @@
     border-radius: 0 16px 16px 0;
     z-index: 200;
     display: none; }
-    .main-container .other .sub-nav {
-      background-color: #dadada; }
-    .main-container .other .section {
-      background-color: #e3d1ff; }
     .main-container .other:nth-of-type(odd) .section, .main-container .other:nth-of-type(odd) .sub-nav {
       background-color: #ff8670; }
+    .main-container .other:nth-of-type(odd) .sub-nav {
+      background-color: #dadada; }
+    .main-container .other:nth-of-type(odd) .section {
+      background-color: #e3d1ff; }
   .main-container .bg {
     position: absolute;
     top: 0;
@@ -105,6 +104,9 @@
     padding-top: 50px;
     background: #5fdb78;
     border-left: 30px solid #3d8d4e; }
+    .main-container .sub-nav.scroll {
+      position: fixed;
+      top: 61px; }
     .main-container .sub-nav h2 {
       text-align: center;
       background-color: #ababab; }
@@ -123,9 +125,6 @@
         .main-container .sub-nav ul a:hover, .main-container .sub-nav ul a.current {
           color: #b93619;
           border-color: #b93619; }
-    .main-container .sub-nav.scroll {
-      position: fixed;
-      top: 61px; }
   .main-container .main-contents {
     margin: 0 auto 0 260px;
     overflow: hidden; }

@@ -33,14 +33,12 @@
   width: 100%;
   list-style: none;
   z-index: 1000;
-
   &.scroll {
-    //background-color: rgba(1, 0, 0, 0.6);
     background-color: #000;
   }
+
   li {
     margin-right: 1rem;
-
     &:last-child {
       margin: 0;
     }
@@ -52,7 +50,6 @@
       font-size: 1.2rem;
       text-decoration: none;
       color: #fff;
-
       &:hover, &.current {
         color: #85b970;
         border-color: #85b970;
@@ -72,14 +69,6 @@
   ------------------------------------------*/
   .main {
     padding-bottom: 20px;
-    overflow: hidden;
-
-    //&::after {
-    //  content: ' ';
-    //  display: block;
-    //  height: 0;
-    //  clear: both;
-    //}
     &#home {
       background: #fff1d0;
       padding-right: 1rem;
@@ -102,16 +91,16 @@
     border-radius: 0 16px 16px 0;
     z-index: 200;
     display: none;
-    .sub-nav {
-      background-color: #dadada;
-    }
-    .section {
-      background-color: #e3d1ff;
-    }
-
     &:nth-of-type(odd) {
       .section, .sub-nav {
         background-color: #ff8670;
+      }
+
+      .sub-nav {
+        background-color: #dadada;
+      }
+      .section {
+        background-color: #e3d1ff;
       }
     }
   }
@@ -141,6 +130,10 @@
     padding-top: 50px;
     background: #5fdb78;
     border-left: 30px solid #3d8d4e;
+    &.scroll {
+      position: fixed;
+      top: 61px;
+    }
 
     h2 {
       text-align: center;
@@ -157,21 +150,14 @@
         margin-bottom: 5px;
         display: block;
         color: #000000;
-        //padding-left: 3rem;
         font-size: 1.5rem;
         text-decoration: none;
         border-bottom: 1px solid #000;
-
         &:hover, &.current {
           color: #b93619;
           border-color: #b93619;
         }
       }
-    }
-
-    &.scroll {
-      position: fixed;
-      top: 61px;
     }
   }
 
@@ -181,12 +167,8 @@
   .main-contents {
     margin: 0 auto 0 260px;
     overflow: hidden;
-    //&::after {
-    //  content: ' ';
-    //  display: block;
-    //  height: 0;
-    //  clear: both;
   }
+
   .section {
     height: 500px;
     min-width: 300px;
