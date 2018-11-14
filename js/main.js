@@ -1,21 +1,17 @@
 $(function() {
-    // smooth-scroll-navigation
+    // Smooth-ScrollNavigation
     $(".sub-nav a").click(function() {
-        var target = $($(this).attr("href")).offset().top;
-
-        target -= 113;
-
+        var target = $($(this).attr("href")).offset().top - 113;
         $("html, body").animate({scrollTop: target}, 500);
 
         return false;
     });
 
-    // fixed-navigation
+    // Fixed-Navigation
     var navPos = $(".sub-nav").offset().top - 61;
 
     $(window).scroll(function() {
         var togglePos = $(window).scrollTop();
-        // if ($(window).scrollTop() > navPos) {
         if (togglePos > navPos) {
             $(".global-nav").addClass("scroll");
             $(".sub-nav").addClass("scroll");
@@ -23,9 +19,17 @@ $(function() {
             $(".global-nav").removeClass("scroll");
             $(".sub-nav").removeClass("scroll");
         }
+
+        // Highlight-SubNavigation
+        for (var i = 1; i <= 5; i++) {
+            if ($(".sec" + i + "").offset().top < $(window).scrollTop() + 230) {
+                $(".sub-nav a").removeClass("current");
+                $(".sub-nav li:nth-child(" + i + ") a").addClass("current");
+            }
+        }
     });
 
-    // horizontal-slide
+    // Horizontal-Slide
     $("#home-a").addClass("current");
     $(".global-nav a").click(function() {
         var current = $(this).attr("href");
@@ -71,5 +75,4 @@ $(function() {
         $(".current").removeClass("current");
         $("#home-a").addClass("current");
     }
-
 });
