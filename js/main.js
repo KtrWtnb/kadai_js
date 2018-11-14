@@ -13,16 +13,16 @@ $(function() {
     $(window).scroll(function() {
         var togglePos = $(window).scrollTop();
         if (togglePos > navPos) {
-            $(".global-nav").addClass("scroll");
-            $(".sub-nav").addClass("scroll");
+            $(".global-nav, .sub-nav").addClass("scroll");
+            $(".bg-close").addClass("fixed");
         } else {
-            $(".global-nav").removeClass("scroll");
-            $(".sub-nav").removeClass("scroll");
+            $(".global-nav, .sub-nav").removeClass("scroll");
+            $(".bg-close").removeClass("fixed");
         }
 
         // Highlight-SubNavigation
         for (var i = 1; i <= 5; i++) {
-            if ($(".sec" + i + "").offset().top < $(window).scrollTop() + 230) {
+            if ($(".sec" + i + "").offset().top < $(window).scrollTop() + 280) {
                 $(".sub-nav a").removeClass("current");
                 $(".sub-nav li:nth-child(" + i + ") a").addClass("current");
             }
@@ -41,10 +41,9 @@ $(function() {
                 activeRemove(".active", 300, 280);
                 $(".current").removeClass("current");
                 $(this).addClass("current");
-                $(current).addClass("active");
+                $(current).addClass("active").show(500);
                 $(".main-container").append('<div class="bg">');
-                $(current).show(500);
-                $(".bg").show(400);
+                $(".bg").show(400).append("<p class='bg-close'>+</p>");
 
             } else {
                 pageScr(0);

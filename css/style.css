@@ -1,11 +1,10 @@
 /*========================================
     header
 ==========================================*/
-.header-contents {
-  height: 200px;
+.header-contents, .footer-contents {
   position: relative;
-  background: #dadada; }
-  .header-contents h1 {
+  background: #bfbc79; }
+  .header-contents h1, .footer-contents h1 {
     margin: auto;
     height: 50px;
     position: absolute;
@@ -13,7 +12,14 @@
     bottom: 0;
     left: 0;
     right: 0;
+    color: #fff;
     text-align: center; }
+
+.header-contents {
+  height: 200px; }
+
+.footer-contents {
+  height: 80px; }
 
 /*========================================
     global navigation
@@ -41,11 +47,11 @@
       text-decoration: none;
       color: #fff; }
       .global-nav li a:hover, .global-nav li a.current {
-        color: #85b970;
-        border-color: #85b970; }
+        color: #cb1b45;
+        border-color: #cb1b45; }
 
 /*========================================
-    main
+    main-container
 ==========================================*/
 .main-container {
   position: relative;
@@ -67,7 +73,7 @@
   .main-container .main {
     padding-bottom: 20px; }
     .main-container .main#home {
-      background: #fff1d0;
+      background: #a2483c;
       padding-right: 1rem; }
   .main-container .other {
     position: absolute;
@@ -76,18 +82,28 @@
     padding-right: 1rem;
     height: 100%;
     width: 95%;
-    background: #fff;
+    background: #c2c2c2;
     border: 5px solid #a0a0a0;
     border-left: none;
     border-radius: 0 16px 16px 0;
     z-index: 200;
     display: none; }
-    .main-container .other:nth-of-type(odd) .section, .main-container .other:nth-of-type(odd) .sub-nav {
-      background-color: #ff8670; }
-    .main-container .other:nth-of-type(odd) .sub-nav {
-      background-color: #dadada; }
-    .main-container .other:nth-of-type(odd) .section {
-      background-color: #e3d1ff; }
+    .main-container .other:nth-of-type(odd) {
+      background: #2f2f2f;
+      color: #fff; }
+      .main-container .other:nth-of-type(odd) .sub-nav {
+        background-color: #e2e2e2; }
+        .main-container .other:nth-of-type(odd) .sub-nav a {
+          color: #000;
+          border-color: #000; }
+          .main-container .other:nth-of-type(odd) .sub-nav a:hover, .main-container .other:nth-of-type(odd) .sub-nav a.current {
+            color: #cb1b45;
+            border-color: #cb1b45; }
+      .main-container .other:nth-of-type(odd) .section {
+        background-color: #e2e2e2;
+        color: #000; }
+    .main-container .other .section {
+      background-color: #36a0c5; }
   .main-container .bg {
     position: absolute;
     top: 0;
@@ -98,18 +114,30 @@
     z-index: 100; }
     .main-container .bg:hover {
       cursor: pointer; }
+    .main-container .bg .bg-close {
+      position: absolute;
+      top: 15px;
+      right: 10px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #dadada;
+      transform: rotate(-45deg); }
+      .main-container .bg .bg-close.fixed {
+        position: fixed;
+        top: 73px; }
   .main-container .sub-nav {
     position: absolute;
     width: 250px;
     padding-top: 50px;
-    background: #5fdb78;
-    border-left: 30px solid #3d8d4e; }
+    background: #000;
+    border-left: 30px solid #cb1b45; }
     .main-container .sub-nav.scroll {
       position: fixed;
       top: 61px; }
     .main-container .sub-nav h2 {
       text-align: center;
-      background-color: #ababab; }
+      color: #fff;
+      background-color: #5c5c5c; }
     .main-container .sub-nav ul {
       list-style: none;
       padding-left: 2rem; }
@@ -118,13 +146,13 @@
       .main-container .sub-nav ul a {
         margin-bottom: 5px;
         display: block;
-        color: #000000;
+        color: #fff;
         font-size: 1.5rem;
         text-decoration: none;
-        border-bottom: 1px solid #000; }
+        border-bottom: 1px solid #fff; }
         .main-container .sub-nav ul a:hover, .main-container .sub-nav ul a.current {
-          color: #b93619;
-          border-color: #b93619; }
+          color: #cb1b45;
+          border-color: #cb1b45; }
   .main-container .main-contents {
     margin: 0 auto 0 260px;
     overflow: hidden; }
@@ -132,6 +160,6 @@
     height: 500px;
     min-width: 300px;
     padding: 1rem;
-    background: #ffafb9; }
+    background: #8ecc47; }
 
 /*# sourceMappingURL=style.css.map */
