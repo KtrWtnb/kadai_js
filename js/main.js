@@ -1,4 +1,9 @@
 $(function() {
+    //subNav-button-toggle
+    $(".sub-nav-button button").on('click', function() {
+        $(".sub-nav").stop().slideToggle(200);
+    });
+
     // Smooth-ScrollNavigation
     $(".sub-nav a").click(function() {
         var target = $($(this).attr("href")).offset().top - 113;
@@ -22,7 +27,7 @@ $(function() {
 
         // Highlight-SubNavigation
         for (var i = 1; i <= 5; i++) {
-            if ($(".sec" + i + "").offset().top < $(window).scrollTop() + 280) {
+            if ($(".sec" + i + "").offset().top < $(window).scrollTop() + 278) {
                 $(".sub-nav a").removeClass("current");
                 $(".sub-nav li:nth-child(" + i + ") a").addClass("current");
             }
@@ -44,6 +49,7 @@ $(function() {
                 $(current).addClass("active").show(500);
                 $(".main-container").append('<div class="bg">');
                 $(".bg").show(400).append("<p class='bg-close'>+</p>");
+                $("#home .sub-nav").addClass("clear");
 
             } else {
                 pageScr(0);
@@ -73,5 +79,6 @@ $(function() {
         });
         $(".current").removeClass("current");
         $("#home-a").addClass("current");
+        $("#home .sub-nav").removeClass("clear");
     }
 });
