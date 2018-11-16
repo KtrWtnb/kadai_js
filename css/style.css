@@ -42,7 +42,7 @@ html, body {
   .global-nav.scroll {
     background-color: #000; }
   .global-nav li {
-    margin-left: 1rem; }
+    margin-left: 16px; }
     .global-nav li:first-child {
       margin: 0; }
     .global-nav li.sub-nav-button {
@@ -52,12 +52,10 @@ html, body {
       vertical-align: middle;
       font-weight: bold; }
       .global-nav li.sub-nav-button button {
-        text-indent: -8px; }
+        text-indent: -3px;
+        outline: none; }
         .global-nav li.sub-nav-button button:hover {
           color: #cb1b45; }
-      @media screen and (max-width: 510px) {
-        .global-nav li.sub-nav-button {
-          display: block; } }
     .global-nav li a {
       padding-right: 2px;
       padding-bottom: 3px;
@@ -68,9 +66,18 @@ html, body {
       .global-nav li a:hover, .global-nav li a.current {
         color: #cb1b45;
         border-color: #cb1b45; }
-      @media screen and (max-width: 510px) {
-        .global-nav li a {
-          font-size: 80%; } }
+  @media screen and (max-width: 510px) {
+    .global-nav {
+      padding-bottom: 0.75rem;
+      background: rgba(0, 0, 0, 0.4); }
+      .global-nav li {
+        margin-left: 10px; }
+      .global-nav li.sub-nav-button {
+        display: block; }
+      .global-nav li a {
+        font-size: 80%;
+        display: block;
+        padding: 1px 6px; } }
 
 /*========================================
     main-container
@@ -123,20 +130,6 @@ html, body {
           .main-container .other:nth-of-type(odd) .sub-nav a:hover, .main-container .other:nth-of-type(odd) .sub-nav a.current {
             color: #cb1b45;
             border-color: #cb1b45; }
-        @media screen and (max-width: 510px) {
-          .main-container .other:nth-of-type(odd) .sub-nav {
-            background-color: rgba(0, 0, 0, 0.2); }
-            .main-container .other:nth-of-type(odd) .sub-nav a {
-              color: #fff;
-              border-color: #fff; }
-            .main-container .other:nth-of-type(odd) .sub-nav.scroll {
-              background-color: #fff; }
-              .main-container .other:nth-of-type(odd) .sub-nav.scroll a {
-                color: #000;
-                border-color: #000; }
-                .main-container .other:nth-of-type(odd) .sub-nav.scroll a:hover, .main-container .other:nth-of-type(odd) .sub-nav.scroll a.current {
-                  color: #cb1b45;
-                  border-color: #cb1b45; } }
       .main-container .other:nth-of-type(odd) .section {
         background-color: #e2e2e2;
         color: #000; }
@@ -144,7 +137,20 @@ html, body {
       background-color: #36a0c5; }
     @media screen and (max-width: 510px) {
       .main-container .other {
-        width: 100%; } }
+        width: 100%; }
+        .main-container .other:nth-of-type(odd) .sub-nav {
+          background-color: rgba(0, 0, 0, 0.3); }
+          .main-container .other:nth-of-type(odd) .sub-nav a {
+            color: #fff;
+            border-color: #fff; }
+          .main-container .other:nth-of-type(odd) .sub-nav.scroll {
+            background-color: #fff; }
+            .main-container .other:nth-of-type(odd) .sub-nav.scroll a {
+              color: #000;
+              border-color: #000; }
+              .main-container .other:nth-of-type(odd) .sub-nav.scroll a:hover, .main-container .other:nth-of-type(odd) .sub-nav.scroll a.current {
+                color: #cb1b45;
+                border-color: #cb1b45; } }
   .main-container .bg {
     position: absolute;
     top: 0;
@@ -216,7 +222,7 @@ html, body {
         width: 100%;
         background-color: rgba(0, 0, 0, 0.1); }
         .main-container .sub-nav.scroll {
-          top: 55px;
+          top: 60px;
           background-color: #000; }
           .main-container .sub-nav.scroll h2 {
             background-color: #5c5c5c; }
@@ -240,18 +246,17 @@ html, body {
   .main-container .main-contents {
     margin: 0 auto 0 260px;
     flex: 1 1 auto; }
-    @media screen and (max-height: 600px) {
-      .main-container .main-contents {
-        margin-left: 160px; } }
-    @media screen and (max-width: 510px) {
-      .main-container .main-contents {
-        margin-left: 16px; } }
   .main-container .section {
     min-height: 600px;
     padding: 1rem;
     background: #8ecc47; }
-    @media screen and (max-width: 510px) {
-      .main-container .section {
-        font-size: 1.3rem; } }
+  @media screen and (max-height: 600px) {
+    .main-container .main-contents {
+      margin-left: 160px; } }
+  @media screen and (max-width: 510px) {
+    .main-container .main-contents {
+      margin-left: 16px; }
+    .main-container .section {
+      font-size: 1.3rem; } }
 
 /*# sourceMappingURL=style.css.map */
